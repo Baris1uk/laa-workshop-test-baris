@@ -14,11 +14,11 @@ Movies <- s3tools::read_using(
   guess_max = 1000000
 )
 
-year_category1 <- Movies %>% 
+year_category <- Movies %>% 
   dplyr::group_by(year) %>% 
   dplyr::summarise(Action_year = sum(Action), Animation_year = sum(Animation), Comedy_year = sum(Comedy), Drama_year = sum(Drama))
 
-year_category2 <- Movies %>% 
+year_category3 <- Movies %>% 
   dplyr::group_by(year) %>% filter(rating>7) %>%  
   dplyr::summarise(Action_year = sum(Action), Animation_year = sum(Animation), Comedy_year = sum(Comedy), Drama_year = sum(Drama))
 
